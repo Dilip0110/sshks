@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  labels:
+    app: my-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: 222634385188.dkr.ecr.ap-south-1.amazonaws.com/dilipecr@sha256:71d31dfade1b0bff24e40c258f9da99dbe1b3c80fbbd64fce36f3ffa6d188730
+        ports:
+        - containerPort: 80
